@@ -1,0 +1,52 @@
+{
+	"entryPoint":{
+	},
+	"http":{
+		"componentType": "adapter",
+		"componentText": "HTTP",
+		"componentAlternativeText": "HTTP Adapter",
+		"compatibleNodes":[
+			"entryPoint"
+		]
+	},
+	"authentication":{
+		"componentType": "adapter",
+		"componentText": "Auth",
+		"componentAlternativeText": "Authentication Adapter",
+		"compatibleNodes": [
+			"http"
+		]
+	},
+	"database":{
+		"componentType": "adapter",
+		"componentText": "DB",
+		"componentAlternativeText": "Database Adapter",
+		"compatibleNodes": [
+			"parallelization"
+		]
+	},
+	"logger":{
+		"componentType": "adapter",
+		"componentText": "Log",
+		"componentAlternativeText": "Logger Adapter",
+		"compatibleNodes": [
+			"parallelization"
+		]
+	},
+	"filesystem":{
+		"componentType": "adapter",
+		"componentText": "FS",
+		"componentAlternativeText": "Filesystem Adapter",
+		"compatibleNodes": [
+			"logger"
+		]
+	},
+	"parallelization":{
+		"componentType": "flow-control",
+		"componentText": "pr",
+		"componentAlternativeText": "Parallelization",
+		"compatibleNodes": [
+			"authentication"
+		]
+	}
+}

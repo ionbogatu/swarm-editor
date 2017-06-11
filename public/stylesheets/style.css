@@ -1,0 +1,321 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 6px 0 0 6px;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+a {
+  color: #00B7FF; }
+
+@media (min-width: 992px) {
+  .search-form-wrapper.col-md-3,
+  .sidebar-wrapper.col-md-3 {
+    padding: 0;
+    width: 26%; }
+  .canvas-metadata-wrapper.col-md-9,
+  .working-area-wrapper.col-md-9 {
+    padding: 0;
+    width: 74%; } }
+
+.search-form-wrapper {
+  border-right: 2px solid #e6e6e6;
+  border-bottom: 2px solid #e6e6e6; }
+  .search-form-wrapper .search-form {
+    position: relative;
+    margin: 3% auto; }
+    .search-form-wrapper .search-form #search-input {
+      position: absolute;
+      width: 71%;
+      border: none;
+      font-size: 2vh;
+      text-indent: 5px;
+      font-style: italic;
+      background: transparent;
+      text-indent: 10%;
+      height: 100%;
+      z-index: 1; }
+    .search-form-wrapper .search-form #search-input:focus {
+      outline: none; }
+    .search-form-wrapper .search-form img {
+      width: 98%;
+      position: relative;
+      z-index: 0; }
+    .search-form-wrapper .search-form .button-mask {
+      position: absolute;
+      top: 0;
+      right: 4%;
+      width: 21%;
+      height: 102%;
+      background: transparent;
+      cursor: pointer; }
+
+.canvas-metadata-wrapper {
+  height: 69px;
+  border-bottom: 2px solid #e6e6e6; }
+  .canvas-metadata-wrapper .document-title {
+    width: 350px;
+    height: 30px;
+    margin: 6px 25px;
+    display: inline-block; }
+    .canvas-metadata-wrapper .document-title #document-title {
+      width: 350px;
+      font-size: 22px;
+      text-indent: 5px;
+      font-style: italic;
+      border: 1px solid #e6e6e6; }
+    .canvas-metadata-wrapper .document-title #document-title:focus {
+      outline: none; }
+  .canvas-metadata-wrapper .document-actions {
+    width: 350px;
+    height: 30px;
+    margin: 6px 25px;
+    float: right;
+    margin-right: 40px;
+    width: 184px; }
+    .canvas-metadata-wrapper .document-actions .restore-action {
+      width: 112px;
+      height: 30px;
+      background-image: url("/images/restore-button.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      float: left; }
+    .canvas-metadata-wrapper .document-actions .save-action {
+      width: 72px;
+      height: 30px;
+      background-image: url("/images/save-button.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      float: right; }
+
+.sidebar-wrapper {
+  height: 700px;
+  overflow-y: hidden;
+  border-right: 2px solid #e6e6e6; }
+  .sidebar-wrapper .sidebar {
+    padding-right: 2%; }
+  .sidebar-wrapper .components.ui-accordion-content {
+    padding: 0 0 0 3%; }
+    .sidebar-wrapper .components.ui-accordion-content .component {
+      margin-top: 3%;
+      width: 100%;
+      height: 100px;
+      background: silver; }
+  .sidebar-wrapper .sidebar {
+    position: absolute;
+    width: 96%;
+    float: left;
+    overflow-y: hidden; }
+    .sidebar-wrapper .sidebar .header {
+      border: none;
+      outline: none;
+      border-radius: 0;
+      margin-top: 3%; }
+    .sidebar-wrapper .sidebar .header:first-child {
+      margin-top: 0; }
+    .sidebar-wrapper .sidebar .ui-state-active {
+      background: #666;
+      border: none;
+      outline: none; }
+    .sidebar-wrapper .sidebar .components {
+      border: none; }
+      .sidebar-wrapper .sidebar .components .component-draggable-active {
+        position: fixed !important;
+        z-index: 100;
+        background: none;
+        width: auto; }
+      .sidebar-wrapper .sidebar .components .component {
+        display: table;
+        cursor: pointer; }
+        .sidebar-wrapper .sidebar .components .component .icon {
+          position: relative; }
+          .sidebar-wrapper .sidebar .components .component .icon .icon-text {
+            left: 20px;
+            height: 80px;
+            width: 56px;
+            margin: 10px 10px 10px 20px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 80px;
+            background: url(/images/icon.png);
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: Times New Roman, Arial, serief;
+            color: #666; }
+        .sidebar-wrapper .sidebar .components .component .icon img {
+          height: 80px;
+          margin: 10px 10px 10px 20px; }
+        .sidebar-wrapper .sidebar .components .component .icon-alternative-text {
+          height: 100%;
+          font-size: 20px;
+          font-style: italic;
+          font-family: Times New Roman, Arial, serief;
+          display: table-cell;
+          vertical-align: middle;
+          padding-right: 10px; }
+  .sidebar-wrapper .scroll-bar-container {
+    width: 2%;
+    height: 100%;
+    float: right;
+    position: relative;
+    margin-right: 2%;
+    background: #f0f0f0; }
+    .sidebar-wrapper .scroll-bar-container .scroll-bar {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      background: #FFD700;
+      cursor: pointer; }
+
+.working-area-wrapper .canvas-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; }
+
+.working-area-wrapper .canvas-wrapper::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  /* the new scrollbar will have a flat appearance with the set background color */ }
+
+.working-area-wrapper .canvas-wrapper::-webkit-scrollbar-thumb {
+  background-color: #FFD700;
+  /* this will style the thumb, ignoring the track */ }
+
+.working-area-wrapper .canvas-wrapper::-webkit-scrollbar-button {
+  /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */ }
+
+.working-area-wrapper .canvas-wrapper::-webkit-scrollbar-corner {
+  background-color: #f0f0f0;
+  /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */ }
+
+.working-area-wrapper .canvas-wrapper {
+  position: relative;
+  overflow: scroll;
+  height: 460px;
+  margin-right: 8px;
+  background-color: #f0f0f0;
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-image: -webkit-linear-gradient(white 2px, transparent 2px), -webkit-linear-gradient(0, white 2px, transparent 2px), -webkit-linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), -webkit-linear-gradient(0, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-image: -moz-linear-gradient(white 2px, transparent 2px), -moz-linear-gradient(0, white 2px, transparent 2px), -moz-linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), -moz-linear-gradient(0, rgba(255, 255, 255, 0.3) 1px, transparent 1px); }
+  .working-area-wrapper .canvas-wrapper .active-component {
+    display: table;
+    position: absolute !important; }
+    .working-area-wrapper .canvas-wrapper .active-component .icon {
+      position: relative;
+      z-index: 100; }
+      .working-area-wrapper .canvas-wrapper .active-component .icon .icon-text {
+        left: 20px;
+        height: 80px;
+        width: 56px;
+        margin: 10px auto;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 80px;
+        background: url(/images/icon.png);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Times New Roman, Arial, serief;
+        color: #666; }
+    .working-area-wrapper .canvas-wrapper .active-component .icon img {
+      height: 80px;
+      margin: 10px 10px 10px 20px; }
+    .working-area-wrapper .canvas-wrapper .active-component .visual-handlers-wrapper {
+      position: absolute;
+      top: -6px;
+      margin: 0 calc(-8px + 50%);
+      width: 110px;
+      height: 110px;
+      z-index: 1;
+      border: 8px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      transform: translate(calc(8px - 50%), 0);
+      cursor: pointer; }
+      .working-area-wrapper .canvas-wrapper .active-component .visual-handlers-wrapper .visual-close-handler {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 0;
+        right: -78%;
+        background: gray;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        line-height: 19px; }
+    .working-area-wrapper .canvas-wrapper .active-component .icon-alternative-text {
+      height: 100%;
+      font-size: 20px;
+      font-style: italic;
+      font-family: Times New Roman, Arial, serief;
+      display: block;
+      color: black;
+      z-index: 100; }
+    .working-area-wrapper .canvas-wrapper .active-component .arms-container {
+      position: relative;
+      top: -48px;
+      width: 1px;
+      height: 1px; }
+      .working-area-wrapper .canvas-wrapper .active-component .arms-container .left-arm {
+        position: absolute;
+        top: -4px;
+        left: -38px;
+        width: 30px;
+        height: 4px;
+        background: #666; }
+      .working-area-wrapper .canvas-wrapper .active-component .arms-container .right-arm {
+        position: absolute;
+        top: -4px;
+        left: 22px;
+        width: 56px;
+        height: 4px;
+        background: #666; }
+      .working-area-wrapper .canvas-wrapper .active-component .arms-container .drop-space {
+        display: none;
+        position: relative;
+        top: -50px;
+        left: 74px;
+        width: 150px;
+        height: 100px;
+        border-radius: 3px;
+        border: 1px dashed rgba(52, 168, 83, 0.4);
+        background: rgba(52, 168, 83, 0.2); }
+  .working-area-wrapper .canvas-wrapper .swarmesb-staged-component .icon-text {
+    cursor: pointer; }
+  .working-area-wrapper .canvas-wrapper .entry-component {
+    position: absolute;
+    top: 175px;
+    left: 20px;
+    color: #666;
+    font-size: 20px;
+    font-style: italic;
+    font-family: Times New Roman, serief; }
+    .working-area-wrapper .canvas-wrapper .entry-component .right-arm {
+      position: relative;
+      top: -23px;
+      right: -50px;
+      width: 30px;
+      height: 4px;
+      background: #666; }
+    .working-area-wrapper .canvas-wrapper .entry-component .drop-space {
+      display: none;
+      position: relative;
+      width: 150px;
+      height: 100px;
+      border-radius: 3px;
+      border: 1px dashed rgba(52, 168, 83, 0.4);
+      background: rgba(52, 168, 83, 0.2);
+      top: -75px;
+      left: 70px; }
+
+.working-area-wrapper .console-wrapper {
+  height: 240px;
+  background: rgba(0, 70, 0, 0.5); }
+
+/*# sourceMappingURL=style.css.map */

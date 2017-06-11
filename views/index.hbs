@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+	<div class="row">
+		<div class="search-form-wrapper col-md-3">
+			<div class="search-form">
+				<input id="search-input" type="text" name="search" placeholder="Type here...">
+				<img src="/images/search-form-bg.png" id="search-form-bg"/>
+				<div class="button-mask"></div>
+			</div>
+		</div>
+		<div class="canvas-metadata-wrapper col-md-9">
+			<div class="canvas-metadata">
+				<div class="document-title">
+					<input type="text" name="document-title" id="document-title" placeholder="Untitled"/>
+				</div>
+				<div class="document-actions">
+					<div class="restore-action"></div>
+					<div class="save-action"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+ 		<div class="sidebar-wrapper col-md-3">
+ 			<div class="sidebar">
+ 				<h3 class="header">Adapters</h3>
+				<div class="components">
+					<div class="component" data-component="http"></div>
+					<div class="component" data-component="authentication"></div>
+					<div class="component" data-component="database"></div>
+					<div class="component" data-component="logger"></div>
+					<div class="component" data-component="filesystem"></div>
+					<div class="component"></div>
+				</div>
+				<h3 class="header">Swarms</h3>
+				<div class="components">
+					<div class="component"></div>
+					<div class="component"></div>
+					<div class="component"></div>
+					<div class="component"></div>
+				</div>
+				<h3 class="header">Flow Control</h3>
+				<div class="components">
+					<div class="component" data-component="parallelization"></div>
+				</div>
+ 			</div>
+ 			<div class="scroll-bar-container">
+				<div class="scroll-bar"></div>
+			</div>
+ 		</div>
+ 		<div class="working-area-wrapper col-md-9">
+ 			<div class="canvas-wrapper">
+ 				<div class="entry-component active-component swarmesb-staged-component" data-component="entryPoint"></div>
+ 			</div>
+ 			<div class="console-wrapper"></div>
+ 		</div>
+	</div>
+</div>
