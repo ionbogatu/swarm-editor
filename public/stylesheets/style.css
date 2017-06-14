@@ -268,14 +268,16 @@ a {
         left: -38px;
         width: 30px;
         height: 4px;
-        background: #666; }
+        background: #666;
+        transform-origin: right center; }
       .working-area-wrapper .canvas-wrapper .active-component .arms-container .right-arm {
         position: absolute;
         top: -4px;
         left: 22px;
         width: 56px;
         height: 4px;
-        background: #666; }
+        background: #666;
+        transform-origin: left center; }
       .working-area-wrapper .canvas-wrapper .active-component .arms-container .drop-space {
         display: none;
         position: relative;
@@ -302,7 +304,8 @@ a {
       right: -50px;
       width: 30px;
       height: 4px;
-      background: #666; }
+      background: #666;
+      transform-origin: left center; }
     .working-area-wrapper .canvas-wrapper .entry-component .drop-space {
       display: none;
       position: relative;

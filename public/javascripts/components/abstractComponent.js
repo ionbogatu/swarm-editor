@@ -61,9 +61,20 @@ jQuery.widget('swarmesb.abstractComponent', {
 
 				    	var endPoint = component.find('.arms-container').offset();
 
-				    	console.log(endPoint);
+				    	transformArm(line, startPoint, {'top': event.clientY, 'left': event.clientX});
 
-				    	_self.transformArm(line, startPoint, {'top': event.clientY, 'left': event.clientX});
+				    	id = parseInt(Object.keys(window.swarmesb.componentLinks)[Object.keys(window.swarmesb.componentLinks).length - 1]) + 1;
+
+				    	// workaround for not overriding second attribute of the window.swarmesb.componentLinks
+				    	if(!$.isEmptyObject(window.swarmesb.componentLinks[Object.keys(window.swarmesb.componentLinks).length - 1])){
+				    		id++;
+				    	}
+
+				    	component.attr('data-component-id', id);
+
+				    	var parentId = $(this).closest('.active-component').data('component-id');
+
+				    	window.swarmesb.componentLinks[parentId] = {'componentId': id, 'line': line};
 				    }
 				});
 			},
@@ -83,7 +94,7 @@ jQuery.widget('swarmesb.abstractComponent', {
 		});
 	},
 
-	transformArm: function(line, startPoint, endPoint){
+	/*transformArm: function(line, startPoint, endPoint){
 
 		var cathete = endPoint.top - startPoint.top;
 		var hypotenuse = Math.sqrt(Math.pow(endPoint.top - startPoint.top, 2) + Math.pow(endPoint.left - startPoint.left, 2))
@@ -102,5 +113,5 @@ jQuery.widget('swarmesb.abstractComponent', {
 		cathete = sineAlpha * hypotenuse;
 
 		line.css({'top': parseFloat(line.css('top')) + cathete / 2});
-	}
+	}*/
 });
