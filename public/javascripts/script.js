@@ -92,6 +92,8 @@ jQuery(document).ready(function($){
 				// initialize entry point
 
 				$('.entry-component').stagedAbstractComponent();
+
+				window.swarmesb.componentLinks[0] = {};
 			}
 		});
 	}else{
@@ -113,6 +115,8 @@ jQuery(document).ready(function($){
 		// initialize entry point
 
 		$('.entry-component').stagedAbstractComponent();
+
+		window.swarmesb.componentLinks[0] = {};
 	}
 
 	$( ".canvas-wrapper" ).droppable({

@@ -35,8 +35,59 @@ function convertComponentToStaged(event, ui){
     	$(ui.draggable[0]).removeAttr('style');
 
 	}else{ // component moved
-		console.log('moved');
+
 	}
 
 	return copy;
+}
+
+function transformArm(line, startPoint, endPoint){
+
+    var cathete = endPoint.top - startPoint.top;
+    var hypotenuse = Math.sqrt(Math.pow(endPoint.top - startPoint.top, 2) + Math.pow(endPoint.left - startPoint.left, 2));
+
+    var sineAlpha = cathete / hypotenuse;
+    var alpha = Math.asin(sineAlpha) * 180 / Math.PI;
+
+    console.log(alpha);
+
+    var ratio = hypotenuse / line.width();
+
+    line.css({
+        'transform': 'rotate(' + alpha + 'deg) scaleX(' + ratio + ')'
+    });
+}
+
+function getRotationDegrees(obj) {
+    var matrix = obj.css("-webkit-transform") ||
+    obj.css("-moz-transform")    ||
+    obj.css("-ms-transform")     ||
+    obj.css("-o-transform")      ||
+    obj.css("transform");
+    if(matrix !== 'none') {
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+        var a = values[0];
+        var b = values[1];
+        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+    } else { var angle = 0; }
+    return (angle < 0) ? angle + 360 : angle;
+}
+
+function getLineWidth(obj) {
+    var length = obj.width();
+    var matrix = obj.css("-webkit-transform") ||
+    obj.css("-moz-transform")    ||
+    obj.css("-ms-transform")     ||
+    obj.css("-o-transform")      ||
+    obj.css("transform");
+    if(matrix !== 'none') {
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+        var a = parseFloat(values[0]);
+        if(a === 0){
+            length = obj.width();
+        }else{
+            length = a * obj.width();
+        }
+    }
+    return length;
 }

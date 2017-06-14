@@ -22,7 +22,8 @@
 		"componentText": "DB",
 		"componentAlternativeText": "Database Adapter",
 		"compatibleNodes": [
-			"parallelization"
+			"parallelization",
+			"authentication"
 		]
 	},
 	"logger":{

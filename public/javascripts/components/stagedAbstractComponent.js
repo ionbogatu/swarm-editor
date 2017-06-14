@@ -1,10 +1,12 @@
 jQuery.widget('swarmesb.stagedAbstractComponent', {
 
 	options: {
-
+		id: Object.keys(window.swarmesb.componentLinks).length
 	},
 
 	_create: function(options){
+
+		var _self = this;
 
 		this.options = $.extend({}, this.options, options);
 		this.element.addClass('swarmesb-staged-component');
@@ -24,7 +26,38 @@ jQuery.widget('swarmesb.stagedAbstractComponent', {
 		this.element.draggable({
 			containment: ".canvas-wrapper",
 			scroll: true,
-			handle: ".visual-handlers-wrapper"
+			handle: ".visual-handlers-wrapper",
+			drag: function(event, ui){
+
+				var componentId = parseInt(ui.helper.data('component-id')),
+					property;
+
+				for(property in window.swarmesb.componentLinks){
+
+					if(window.swarmesb.componentLinks[property].componentId === componentId){
+
+						var line = window.swarmesb.componentLinks[property].line;
+						var startPoint = line.offset();
+						var rotationDegrees = getRotationDegrees(line) % 360;
+
+						if(rotationDegrees > 180){
+							startPoint.top = startPoint.top + Math.abs(Math.sin(rotationDegrees * Math.PI / 180) * getLineWidth(line));
+						}
+
+				    	var endPoint = ui.helper.find('.arms-container').offset();
+
+						transformArm(line, startPoint, endPoint);
+					}
+				}
+
+				var outgoingLine = window.swarmesb.componentLinks[componentId].line;
+
+				var startPoint = ui.helper.find('.arms-container').offset();
+
+				var endPoint = $('.active-component[data-component-id="' + window.swarmesb.componentLinks[componentId].componentId + '"]').find('.arms-container').offset();
+
+				transformArm(outgoingLine, startPoint, endPoint);
+			}
 		});
 
 		// add visual handlers
